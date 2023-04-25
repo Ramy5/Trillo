@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- CSS FILE -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- ICON BESIDE TITLE -->
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+  <title>Trillo &mdash; Your all-in-one booking app</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- START HEADER -->
+    <header class="header">
+      <!-- LOGO -->
+      <img class="header__logo" src="./img/logo.png" alt="logo">
+
+      <!-- SEARCH -->
+      <form action="#" class="search">
+        <input type="text" name="search" class="search__input" placeholder="Search hotels">
+        <button type="submit" class="search__btn">
+          <svg class="user-nav__icon">
+            <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+          </svg>
+        </button>
+      </form>
+
+      <!-- NAV -->
+      <nav class="user-nav">
+        <div class="user-nav__icon-box">
+          <svg class="user-nav__icon">
+            <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+          </svg>
+          <span class="user-nav__user-notification">7</span>
+        </div>
+        <div class="user-nav__icon-box">
+          <svg class="user-nav__icon">
+            <use xlink:href="img/sprite.svg#icon-chat"></use>
+          </svg>
+          <span class="user-nav__user-notification">13</span>
+        </div>
+        <div class="user-nav__user">
+          <img src="img/user.jpg" alt="user photo" class="user-nav__user-photo">
+          <span class="user-nav__user-name">Jonas</span>
+        </div>
+      </nav>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- START CONTENT -->
+    <div class="content">
+      <!-- START SIDE NAVIGATION -->
+      <nav class="sidebar">NAVIGATION SECTION</nav>
+      <!-- END SIDE NAVIGATION -->
+
+      <!-- START MAIN HOTEL CONTENT -->
+      <main class="hotel-view">HOTEL VIEW SECTION</main>
+      <!-- END MAIN HOTEL CONTENT -->
+    </div>
+    <!-- END CONTENT -->
+  </div>
+</body>
+
+</html>
