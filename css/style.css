@@ -41,8 +41,7 @@ body {
   max-width: 120rem;
   background-color: var(--color-grey-light-1);
   margin: 8rem auto;
-  box-shadow: var(--box-shadow-dark);
-  height: 50rem; }
+  box-shadow: var(--box-shadow-dark); }
 
 .header {
   height: 7rem;
@@ -54,7 +53,11 @@ body {
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
-  flex: 0 0 18%; }
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90rem; }
 
 .hotel-view {
   background-color: orangered;
@@ -140,3 +143,47 @@ body {
       margin-right: 1rem; }
     .header .user-nav__user-name {
       font-size: 1.5rem; }
+
+.side-nav {
+  list-style: none;
+  padding-top: 4rem; }
+  .side-nav__item {
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+    .side-nav__item::before {
+      content: "";
+      background-color: var(--color-primary);
+      width: 5px;
+      height: 100%;
+      transform: scaleY(0);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: transform 0.3s, width 0.3s 0.3s cubic-bezier(1, 0, 0, 1), background-color 0.2s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    width: 100%;
+    transform: scaleY(1); }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-dark); }
+  .side-nav__link:link, .side-nav__link:active {
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 10; }
+  .side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor; }
+
+.legal-copy {
+  padding: 2rem;
+  font-size: 1.3rem;
+  color: var(--color-grey-light-4);
+  text-align: center; }
