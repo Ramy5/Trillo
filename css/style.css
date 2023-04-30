@@ -14,6 +14,17 @@
   --box-shadow-light: 0 2rem 4rem rgba(var(--color-black), 0.2);
   --box-shadow-dark: 0 2rem 6rem rgba(var(--color-black), 0.4); }
 
+@keyframes btn-scale {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(var(--color-black), 0.25); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
 * {
   margin: 0;
   padding: 0; }
@@ -46,7 +57,7 @@ body {
 .header {
   height: 7rem;
   background-color: var(--color-white);
-  border-bottom: var(--color-grey-light-2); }
+  border-bottom: 2px solid var(--color-grey-light-2); }
 
 .content {
   display: flex; }
@@ -60,8 +71,29 @@ body {
   height: 90rem; }
 
 .hotel-view {
-  background-color: orangered;
   flex: 1; }
+
+.btn-inline {
+  border: none;
+  padding-bottom: 2px;
+  background-color: transparent;
+  color: var(--color-primary);
+  border-bottom: 1px solid currentColor;
+  font-size: inherit;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: inline-block; }
+  .btn-inline:hover {
+    color: var(--color-grey-dark-1); }
+  .btn-inline:focus {
+    outline: none;
+    animation: btn-scale 1s infinite; }
+
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    display: block;
+    width: 100%; }
 
 .header {
   display: flex;
@@ -187,3 +219,40 @@ body {
   font-size: 1.3rem;
   color: var(--color-grey-light-4);
   text-align: center; }
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2); }
+  .overview__heading {
+    font-size: 2.25rem;
+    padding: 1.5rem 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+  .overview__stars-icon, .overview__location-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary); }
+  .overview__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    font-size: 1.3rem; }
+  .overview__location-icon {
+    margin-right: 3px; }
+  .overview__rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 2rem;
+    align-self: stretch;
+    color: var(--color-white);
+    background-color: var(--color-primary); }
+  .overview__rating-average {
+    font-size: 2.5rem; }
