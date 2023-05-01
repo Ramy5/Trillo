@@ -1,0 +1,28 @@
+.description {
+  flex: 0 0 60%;
+  background-color: var(--color-white);
+  padding: 3rem;
+  margin-right: 4.5rem;
+  box-shadow: var(--box-shadow-2x-light);
+}
+
+.recommend {
+  @include flex-center;
+
+  &__count {
+    font-size: 1.3rem;
+    margin-right: auto;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-grey-light-1);
+
+    &:not(:last-child) {
+      margin-right: -2rem;
+    }
+  }
+}

@@ -11,8 +11,10 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
+  --box-shadow-2x-light: 0 2rem 6rem rgba(var(--color-black), 0.08);
   --box-shadow-light: 0 2rem 4rem rgba(var(--color-black), 0.2);
-  --box-shadow-dark: 0 2rem 6rem rgba(var(--color-black), 0.4); }
+  --box-shadow-dark: 0 2rem 6rem rgba(var(--color-black), 0.4);
+  --line: 1px solid var(--color-grey-light-2); }
 
 @keyframes btn-scale {
   0% {
@@ -48,6 +50,9 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh; }
 
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
 .container {
   max-width: 120rem;
   background-color: var(--color-grey-light-1);
@@ -67,11 +72,18 @@ body {
   flex: 0 0 18%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 90rem; }
+  justify-content: space-between; }
 
 .hotel-view {
   flex: 1; }
+
+.detail {
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-2);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .btn-inline {
   border: none;
@@ -88,6 +100,29 @@ body {
   .btn-inline:focus {
     outline: none;
     animation: btn-scale 1s infinite; }
+
+.description {
+  flex: 0 0 60%;
+  background-color: var(--color-white);
+  padding: 3rem;
+  margin-right: 4.5rem;
+  box-shadow: var(--box-shadow-2x-light); }
+
+.recommend {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .recommend__count {
+    font-size: 1.3rem;
+    margin-right: auto; }
+  .recommend__photo {
+    box-sizing: content-box;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-grey-light-1); }
+    .recommend__photo:not(:last-child) {
+      margin-right: -2rem; }
 
 .gallery {
   display: flex; }
@@ -176,6 +211,33 @@ body {
     .header .user-nav__user-name {
       font-size: 1.5rem; }
 
+.list {
+  margin: 2.5rem 0 4.5rem;
+  padding: 2rem 0 3rem;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none; }
+  .list__item {
+    flex: 50%;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center; }
+    .list__item::before {
+      content: "";
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      width: 1.1rem;
+      height: 1.1rem;
+      display: inline-block;
+      background-color: var(--color-primary);
+      margin-right: 0.4rem; }
+
 .side-nav {
   list-style: none;
   padding-top: 4rem; }
@@ -256,3 +318,6 @@ body {
     background-color: var(--color-primary); }
   .overview__rating-average {
     font-size: 2.5rem; }
+
+.user-review {
+  flex: 1; }
