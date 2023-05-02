@@ -6,8 +6,17 @@
   border-bottom: 1px solid currentColor;
   font-size: inherit;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s;
   display: inline-block;
+
+  span {
+    margin-left: 2px;
+    transition: all 0.3s;
+  }
+
+  &:hover span {
+    margin-left: 7px;
+  }
 
   &:hover {
     color: var(--color-grey-dark-1);

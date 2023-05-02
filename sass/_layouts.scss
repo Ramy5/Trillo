@@ -31,5 +31,10 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-2);
   font-size: 1.5rem;
+  display: flex;
+}
+
+.user-review {
   @include flex-center;
+  flex-direction: column;
 }

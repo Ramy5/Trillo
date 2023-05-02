@@ -81,9 +81,13 @@ body {
   padding: 4.5rem;
   background-color: var(--color-grey-light-2);
   font-size: 1.5rem;
+  display: flex; }
+
+.user-review {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column; }
 
 .btn-inline {
   border: none;
@@ -93,8 +97,13 @@ body {
   border-bottom: 1px solid currentColor;
   font-size: inherit;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s;
   display: inline-block; }
+  .btn-inline span {
+    margin-left: 2px;
+    transition: all 0.3s; }
+  .btn-inline:hover span {
+    margin-left: 7px; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
   .btn-inline:focus {
@@ -318,6 +327,45 @@ body {
     background-color: var(--color-primary); }
   .overview__rating-average {
     font-size: 2.5rem; }
+
+.review {
+  background-color: var(--color-white);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  position: relative; }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.7rem;
+    left: -1rem;
+    font-size: 20rem;
+    font-family: sans-serif;
+    line-height: 1;
+    color: var(--color-grey-light-2);
+    z-index: 5; }
+  .review__text {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 2.5rem; }
+  .review__user {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .review__photo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-right: 2rem; }
+  .review__user-box {
+    margin-right: auto;
+    font-size: 1.2rem; }
+  .review__user-name {
+    text-transform: uppercase;
+    font-weight: bold; }
+  .review__rating {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-primary); }
 
 .user-review {
   flex: 1; }
