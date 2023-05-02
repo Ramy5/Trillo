@@ -1,0 +1,67 @@
+.cta {
+  padding: 5rem 0;
+  @include flex-center;
+  flex-direction: column;
+
+  &__book {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+}
+
+.book__btn {
+  border: none;
+  font-weight: 300;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &-visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &-invisible {
+    padding: 2rem 0;
+    position: absolute;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+
+  &:hover &-invisible {
+    top: 0;
+  }
+
+  &:hover &-visible {
+    transform: translateY(100%);
+  }
+
+  &:focus {
+    outline: none;
+    animation: btn-scale 1s infinite;
+  }
+}
