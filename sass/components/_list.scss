@@ -7,6 +7,11 @@
   flex-wrap: wrap;
   list-style: none;
 
+  @media only screen and (max-width: $bp-x-smallest) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   &__item {
     flex: 50%;
     margin-bottom: 0.7rem;
@@ -15,14 +20,24 @@
 
     &::before {
       content: "";
-      -webkit-mask-image: url(../img/chevron-thin-right.svg);
-      -webkit-mask-size: cover;
-      mask-image: url(../img/chevron-thin-right.svg);
-      mask-size: cover;
+
+      // NEWER BROWSER
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        background-color: var(--color-primary);
+        background-image: none;
+      }
+
+      // OLDER BROWSER
+      background-image: url("../img/chevron-thin-right.svg");
+      background-size: cover;
+
       width: 1.1rem;
       height: 1.1rem;
       display: inline-block;
-      background-color: var(--color-primary);
       margin-right: 0.4rem;
     }
   }

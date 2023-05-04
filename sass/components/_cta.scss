@@ -3,6 +3,16 @@
   @include flex-center;
   flex-direction: column;
 
+  @media only screen and (max-width: $bp-smallest) {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: $bp-x-smallest) {
+    width: 85%;
+  }
+
   &__book {
     font-size: 2rem;
     font-weight: 300;

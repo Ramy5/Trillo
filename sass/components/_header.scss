@@ -1,6 +1,11 @@
 .header {
   @include flex-between;
 
+  @media only screen and (max-width: $bp-smallest) {
+    height: 11rem;
+    flex-wrap: wrap;
+  }
+
   // LOGO
   &__logo {
     width: 4.5rem;
@@ -13,6 +18,12 @@
     @include flex-center;
     flex: 0 0 40%;
     font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      order: 1;
+      flex: 0 0 90%;
+      margin: auto;
+    }
 
     &__input {
       background-color: var(--color-grey-light-2);

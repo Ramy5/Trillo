@@ -3,17 +3,35 @@
   align-items: center;
   border-bottom: 1px solid var(--color-grey-light-2);
 
+  @media only screen and (max-width: $bp-x-smallest) {
+    flex-wrap: wrap;
+  }
+
   &__heading {
     font-size: 2.25rem;
     padding: 1.5rem 3rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 2rem;
+      padding: 1.5rem 0.7rem;
+    }
+
+    @media only screen and (max-width: $bp-x-smallest) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__stars {
     margin-right: auto;
     display: flex;
+
+    @media only screen and (max-width: $bp-x-smallest) {
+      margin-left: 2.5rem;
+    }
   }
 
   &__stars-icon,
@@ -40,9 +58,17 @@
     align-self: stretch;
     color: var(--color-white);
     background-color: var(--color-primary);
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding: 0 1rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.5rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.5rem;
+    }
   }
 }

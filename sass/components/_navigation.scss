@@ -3,11 +3,24 @@
   list-style: none;
   padding-top: 4rem;
 
+  @media only screen and (max-width: $bp-small) {
+    display: flex;
+    padding-top: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bp-small) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-small) {
+        margin-bottom: 0;
+      }
     }
 
     &::before {
@@ -45,6 +58,19 @@
     font-size: 1.5rem;
     position: relative;
     z-index: 10;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+      padding: 1.5rem 0;
+    }
   }
 
   &__icon {
@@ -52,6 +78,10 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -61,4 +91,8 @@
   font-size: 1.3rem;
   color: var(--color-grey-light-4);
   text-align: center;
+
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
 }
